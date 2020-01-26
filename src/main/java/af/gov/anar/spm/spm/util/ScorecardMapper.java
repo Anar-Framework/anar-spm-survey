@@ -1,13 +1,19 @@
 
 package af.gov.anar.spm.spm.util;
 
+import af.gov.anar.lib.date.DateUtility;
+import af.gov.anar.spm.spm.data.ScorecardData;
+import af.gov.anar.spm.spm.data.ScorecardValue;
+import af.gov.anar.spm.spm.domain.Question;
+import af.gov.anar.spm.spm.domain.Response;
+import af.gov.anar.spm.spm.domain.Scorecard;
+import af.gov.anar.spm.spm.domain.Survey;
+import af.gov.anar.spm.spm.exception.SurveyResponseNotAvailableException;
+import org.apache.commons.lang.time.DateUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.fineract.infrastructure.core.service.DateUtils;
-import org.apache.fineract.portfolio.client.domain.Client;
-import org.apache.fineract.spm.exception.SurveyResponseNotAvailableException;
-import org.apache.fineract.useradministration.domain.AppUser;
 
 public class ScorecardMapper {
 
@@ -15,8 +21,7 @@ public class ScorecardMapper {
         super();
     }
 
-    public static List<Scorecard> map(final ScorecardData scorecardData, final Survey survey,
-                                      final AppUser appUser, final Client client) {
+    public static List<Scorecard> map(final ScorecardData scorecardData, final Survey survey) {
         final List<Scorecard> scorecards = new ArrayList<>();
 
         final List<ScorecardValue> scorecardValues = scorecardData.getScorecardValues();
@@ -27,9 +32,9 @@ public class ScorecardMapper {
                scorecards.add(scorecard);
                scorecard.setSurvey(survey);
                ScorecardMapper.setQuestionAndResponse(scorecardValue, scorecard, survey);
-               scorecard.setAppUser(appUser);
-               scorecard.setClient(client);
-               scorecard.setCreatedOn(DateUtils.getLocalDateOfTenant().toDate());
+//               scorecard.setAppUser(appUser);
+//               scorecard.setClient(client);
+//               scorecard.setCreatedOn(DateUtility.getUTCCurrentDateTimeString().toLocalDate());
                scorecard.setValue(scorecardValue.getValue());
            }
         }else{

@@ -1,17 +1,13 @@
 
 package af.gov.anar.spm.spm.util;
 
-import org.apache.fineract.spm.data.ComponentData;
-import org.apache.fineract.spm.data.QuestionData;
-import org.apache.fineract.spm.data.ResponseData;
-import org.apache.fineract.spm.data.SurveyData;
-import org.apache.fineract.spm.domain.Component;
-import org.apache.fineract.spm.domain.Question;
-import org.apache.fineract.spm.domain.Response;
-import org.apache.fineract.spm.domain.Survey;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import af.gov.anar.spm.spm.data.*;
+import af.gov.anar.spm.spm.domain.*;
+import af.gov.anar.spm.spm.exception.SurveyResponseNotAvailableException;
 
 public class SurveyMapper {
 

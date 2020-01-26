@@ -1,4 +1,4 @@
-TRANSIT
+
 package af.gov.anar.spm.spm.data;
 
 import java.util.Date;

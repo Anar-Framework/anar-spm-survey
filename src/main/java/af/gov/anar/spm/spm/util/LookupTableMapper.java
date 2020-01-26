@@ -1,10 +1,10 @@
 
 package af.gov.anar.spm.spm.util;
 
-import org.apache.fineract.spm.data.LookupTableData;
-import org.apache.fineract.spm.data.LookupTableEntry;
-import org.apache.fineract.spm.domain.LookupTable;
-import org.apache.fineract.spm.domain.Survey;
+import af.gov.anar.spm.spm.data.LookupTableData;
+import af.gov.anar.spm.spm.data.LookupTableEntry;
+import af.gov.anar.spm.spm.domain.LookupTable;
+import af.gov.anar.spm.spm.domain.Survey;
 
 import java.util.*;
 

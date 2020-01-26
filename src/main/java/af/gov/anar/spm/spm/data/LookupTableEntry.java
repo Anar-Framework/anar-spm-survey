@@ -1,4 +1,3 @@
-TRANSIT
 package af.gov.anar.spm.spm.data;
 
 public class LookupTableEntry {
