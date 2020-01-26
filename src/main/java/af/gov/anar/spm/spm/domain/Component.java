@@ -1,7 +1,9 @@
 
 package af.gov.anar.spm.spm.domain;
 
-import org.apache.fineract.infrastructure.core.domain.AbstractPersistableCustom;
+
+
+import af.gov.anar.lang.data.AbstractPersistableCustom;
 
 import javax.persistence.*;
 
