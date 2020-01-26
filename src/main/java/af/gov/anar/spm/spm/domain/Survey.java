@@ -3,6 +3,7 @@ package af.gov.anar.spm.spm.domain;
 
 
 import af.gov.anar.lang.data.AbstractPersistableCustom;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -12,13 +13,18 @@ import java.util.List;
 
 @Entity
 @Table(name = "m_surveys")
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class Survey extends AbstractPersistableCustom<Long> {
 
-    @OneToMany(mappedBy = "survey", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
+    @OneToMany(mappedBy = "survey", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval=true)
     @OrderBy("sequenceNo")
     private List<Component> components;
 
-    @OneToMany(mappedBy = "survey", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval=true)
+    @OneToMany(mappedBy = "survey", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval=true)
     @OrderBy("sequenceNo")
     private List<Question> questions;
 
@@ -46,17 +52,6 @@ public class Survey extends AbstractPersistableCustom<Long> {
         super();
     }
 
-    public List<Component> getComponents() {
-        return components;
-    }
-
-    public void setComponents(List<Component> components) {
-        this.components = components;
-    }
-
-    public List<Question> getQuestions() {
-        return questions;
-    }
 
     public void setQuestions(List<Question> questions) {
         if(this.questions != null){
@@ -68,51 +63,5 @@ public class Survey extends AbstractPersistableCustom<Long> {
         this.questions.addAll(questions);
     }
 
-    public String getKey() {
-        return key;
-    }
 
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getCountryCode() {
-        return countryCode;
-    }
-
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
-    }
-
-    public Date getValidFrom() {
-        return validFrom;
-    }
-
-    public void setValidFrom(Date validFrom) {
-        this.validFrom = validFrom;
-    }
-
-    public Date getValidTo() {
-        return validTo;
-    }
-
-    public void setValidTo(Date validTo) {
-        this.validTo = validTo;
-    }
 }

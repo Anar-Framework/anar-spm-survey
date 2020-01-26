@@ -3,11 +3,17 @@ package af.gov.anar.spm.spm.domain;
 
 
 import af.gov.anar.lang.data.AbstractPersistableCustom;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "m_survey_responses")
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class Response extends AbstractPersistableCustom<Long> {
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -27,35 +33,5 @@ public class Response extends AbstractPersistableCustom<Long> {
         super();
     }
 
-    public Question getQuestion() {
-        return question;
-    }
 
-    public void setQuestion(Question question) {
-        this.question = question;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public Integer getValue() {
-        return value;
-    }
-
-    public void setValue(Integer value) {
-        this.value = value;
-    }
-
-    public Integer getSequenceNo() {
-        return sequenceNo;
-    }
-
-    public void setSequenceNo(Integer sequenceNo) {
-        this.sequenceNo = sequenceNo;
-    }
 }

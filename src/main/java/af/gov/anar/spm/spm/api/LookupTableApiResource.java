@@ -27,7 +27,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/surveys/{surveyId}/lookuptables")
-@Api(value = "SPM API - LookUp Table", description = "The SPM API provides the ability to create custom surveys to collect social performance measurentment data or any additional questionnaire a financial institute want to collect.")
+@Api(value = "SPM API - LookUp Table", description = "The SPM API provides the ability to create custom surveys to collect social performance measurentment data or any additional questionnaire a institution want to collect.")
 public class LookupTableApiResource {
 
     private final SpmService spmService;

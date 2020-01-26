@@ -4,11 +4,17 @@ package af.gov.anar.spm.spm.domain;
 
 
 import af.gov.anar.lang.data.AbstractPersistableCustom;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "m_survey_components")
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class Component extends AbstractPersistableCustom<Long> {
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -31,43 +37,4 @@ public class Component extends AbstractPersistableCustom<Long> {
         super();
     }
 
-    public Survey getSurvey() {
-        return survey;
-    }
-
-    public void setSurvey(Survey survey) {
-        this.survey = survey;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String title) {
-        this.text = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Integer getSequenceNo() {
-        return sequenceNo;
-    }
-
-    public void setSequenceNo(Integer sequenceNo) {
-        this.sequenceNo = sequenceNo;
-    }
 }

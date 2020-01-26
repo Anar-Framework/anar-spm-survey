@@ -3,11 +3,17 @@ package af.gov.anar.spm.spm.domain;
 
 
 import af.gov.anar.lang.data.AbstractPersistableCustom;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "m_survey_lookup_tables")
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class LookupTable extends AbstractPersistableCustom<Long> {
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -33,51 +39,4 @@ public class LookupTable extends AbstractPersistableCustom<Long> {
         super();
     }
 
-    public Survey getSurvey() {
-        return survey;
-    }
-
-    public void setSurvey(Survey survey) {
-        this.survey = survey;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Integer getValueFrom() {
-        return valueFrom;
-    }
-
-    public void setValueFrom(Integer valueFrom) {
-        this.valueFrom = valueFrom;
-    }
-
-    public Integer getValueTo() {
-        return valueTo;
-    }
-
-    public void setValueTo(Integer valueTo) {
-        this.valueTo = valueTo;
-    }
-
-    public Double getScore() {
-        return score;
-    }
-
-    public void setScore(Double score) {
-        this.score = score;
-    }
 }

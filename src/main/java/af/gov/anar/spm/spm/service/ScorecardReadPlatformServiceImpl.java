@@ -19,12 +19,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class ScorecardReadPlatformServiceImpl implements ScorecardReadPlatformService{
 
-    private final JdbcTemplate jdbcTemplate;
-
     @Autowired
-    public ScorecardReadPlatformServiceImpl(final AbstractRoutingDataSource dataSource) {
-        this.jdbcTemplate = new JdbcTemplate(dataSource);
-    }
+    private JdbcTemplate jdbcTemplate;
+
 
     private static final class ScorecardMapper implements RowMapper<ScorecardData> {
 
