@@ -23,10 +23,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Path("/surveys/scorecards")
-@Component
-@Scope("singleton")
+@RestController
+@RequestMapping("/api/surveys/scorecards")
 @Api(value = "SPM - Scorecards", description = " ")
 public class ScorecardApiResource {
 
@@ -43,8 +46,7 @@ public class ScorecardApiResource {
         this.scorecardReadPlatformService = scorecardReadPlatformService;
     }
 
-    @GET
-    @Path("{surveyId}")
+    @GetMapping(value = "/{surveyId}")
     @Consumes({ MediaType.APPLICATION_JSON })
     @Produces({ MediaType.APPLICATION_JSON })
     @Transactional
@@ -55,8 +57,7 @@ public class ScorecardApiResource {
         return (List<ScorecardData>) this.scorecardReadPlatformService.retrieveScorecardBySurvey(surveyId);
     }
 
-    @POST
-    @Path("{surveyId}")
+    @PostMapping(value = "/{surveyId}")
     @Consumes({ MediaType.APPLICATION_JSON })
     @Produces({ MediaType.APPLICATION_JSON })
     @Transactional
@@ -68,8 +69,7 @@ public class ScorecardApiResource {
 //        this.scorecardService.createScorecard(ScorecardMapper.map(scorecardData, survey, appUser, client));
     }
 
-    @GET
-    @Path("{surveyId}/clients/{clientId}")
+    @GetMapping("/{surveyId}/clients/{clientId}")
     @Consumes({ MediaType.APPLICATION_JSON })
     @Produces({ MediaType.APPLICATION_JSON })
     @Transactional
@@ -81,8 +81,7 @@ public class ScorecardApiResource {
 
     }
 
-    @GET
-    @Path("clients/{clientId}")
+    @GetMapping("/clients/{clientId}")
     @Consumes({ MediaType.APPLICATION_JSON })
     @Produces({ MediaType.APPLICATION_JSON })
     @Transactional

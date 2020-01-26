@@ -14,6 +14,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -21,9 +25,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Path("/surveys/{surveyId}/lookuptables")
-@Component
-@Scope("singleton")
+@RestController
+@RequestMapping("/surveys/{surveyId}/lookuptables")
 @Api(value = "SPM API - LookUp Table", description = "The SPM API provides the ability to create custom surveys to collect social performance measurentment data or any additional questionnaire a financial institute want to collect.")
 public class LookupTableApiResource {
 
@@ -38,7 +41,7 @@ public class LookupTableApiResource {
         this.lookupTableService = lookupTableService;
     }
 
-    @GET
+    @GetMapping(value = "")
     @Consumes({ MediaType.APPLICATION_JSON })
     @Produces({ MediaType.APPLICATION_JSON })
     @Transactional
@@ -57,8 +60,7 @@ public class LookupTableApiResource {
         return Collections.EMPTY_LIST;
     }
 
-    @GET
-    @Path("/{key}")
+    @GetMapping(value = "/{key}")
     @Consumes({ MediaType.APPLICATION_JSON })
     @Produces({ MediaType.APPLICATION_JSON })
     @Transactional
@@ -78,7 +80,7 @@ public class LookupTableApiResource {
         return LookupTableMapper.map(lookupTables).get(0);
     }
 
-    @POST
+    @PostMapping(value = "")
     @Consumes({ MediaType.APPLICATION_JSON })
     @Produces({ MediaType.APPLICATION_JSON })
     @Transactional

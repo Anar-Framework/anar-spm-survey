@@ -29,10 +29,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.google.gson.Gson;
+import org.springframework.web.bind.annotation.*;
 
-@Path("/surveys")
-@Component
-@Scope("singleton")
+@RestController
+@RequestMapping("/api/surveys")
 @Api(value = "SPM - Serveys", description = "")
 public class SpmApiResource {
 
@@ -43,7 +43,7 @@ public class SpmApiResource {
         this.spmService = spmService;
     }
 
-    @GET
+    @GetMapping
     @Consumes({ MediaType.APPLICATION_JSON })
     @Produces({ MediaType.APPLICATION_JSON })
     @Transactional
@@ -65,8 +65,7 @@ public class SpmApiResource {
         return result;
     }
 
-    @GET
-    @Path("/{id}")
+    @GetMapping(value = "/{id}")
     @Consumes({ MediaType.APPLICATION_JSON })
     @Produces({ MediaType.APPLICATION_JSON })
     @Transactional
@@ -77,7 +76,7 @@ public class SpmApiResource {
         return SurveyMapper.map(survey);
     }
 
-    @POST
+    @PostMapping(value = "")
     @Consumes({ MediaType.APPLICATION_JSON })
     @Produces({ MediaType.APPLICATION_JSON })
     @Transactional
@@ -90,8 +89,7 @@ public class SpmApiResource {
 
     }
 
-    @PUT
-    @Path("/{id}")
+    @PutMapping(value = "/{id}")
     @Consumes({ MediaType.APPLICATION_JSON })
     @Produces({ MediaType.APPLICATION_JSON })
     @Transactional
@@ -102,8 +100,7 @@ public class SpmApiResource {
         return getResponse(survey.getId());
     }
 
-    @POST
-    @Path("/{id}")
+    @PostMapping("/{id}")
     @Consumes({ MediaType.APPLICATION_JSON })
     @Produces({ MediaType.APPLICATION_JSON })
     @Transactional
