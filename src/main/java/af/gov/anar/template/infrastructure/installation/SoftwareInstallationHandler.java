@@ -25,7 +25,6 @@ import af.gov.anar.lib.hmac.HMACUtility;
 import af.gov.anar.lib.logger.Logger;
 import af.gov.anar.template.infrastructure.constant.ApplicationGenericConstants;
 import af.gov.anar.template.infrastructure.util.LoggerFactory;
-import org.springframework.stereotype.Component;
 
 /**
  * Update the Application

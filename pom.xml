@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>af.gov.anar</groupId>
-	<artifactId>anar-servicetemplate</artifactId>
+	<artifactId>anar-spm</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>anar-servicetemplate</name>
-	<description>Service Template for Developing Services for Anar Framework</description>
+	<name>anar-spm</name>
+	<description>SPM Module of Anar Framework</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

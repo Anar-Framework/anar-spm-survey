@@ -1,6 +1,5 @@
 package af.gov.anar.template.infrastructure.util;
 
-import af.gov.anar.lang.Application;
 import af.gov.anar.lib.logger.Logger;
 import af.gov.anar.lib.logger.appender.RollingFileAppender;
 import af.gov.anar.lib.logger.factory.Logfactory;
