@@ -2,7 +2,7 @@
 package af.gov.anar.spm.spm.domain;
 
 
-import af.gov.anar.lang.data.AbstractPersistableCustom;
+import af.gov.anar.core.data.AbstractPersistableCustom;
 import lombok.*;
 
 import javax.persistence.*;

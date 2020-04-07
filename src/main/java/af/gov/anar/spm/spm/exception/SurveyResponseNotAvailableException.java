@@ -2,7 +2,7 @@
 package af.gov.anar.spm.spm.exception;
 
 
-import af.gov.anar.lang.infrastructure.exception.common.AbstractPlatformDomainRuleException;
+import af.gov.anar.core.infrastructure.exception.common.AbstractPlatformDomainRuleException;
 
 public class SurveyResponseNotAvailableException extends AbstractPlatformDomainRuleException {
 

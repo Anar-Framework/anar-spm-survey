@@ -1,6 +1,6 @@
 package af.gov.anar.spm.infrastructure.installation.tpm.asymmetric;
 
-import af.gov.anar.lang.infrastructure.exception.common.BaseUncheckedException;
+import af.gov.anar.core.infrastructure.exception.common.BaseUncheckedException;
 import tss.Tpm;
 import tss.tpm.CreatePrimaryResponse;
 import tss.tpm.TPM2B_PUBLIC_KEY_RSA;

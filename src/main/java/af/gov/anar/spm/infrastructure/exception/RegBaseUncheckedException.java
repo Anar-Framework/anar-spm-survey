@@ -1,8 +1,8 @@
 package af.gov.anar.spm.infrastructure.exception;
 
 
-import af.gov.anar.lang.infrastructure.exception.common.BaseUncheckedException;
-import af.gov.anar.lang.infrastructure.exception.common.ExceptionUtils;
+import af.gov.anar.core.infrastructure.exception.common.BaseUncheckedException;
+import af.gov.anar.core.infrastructure.exception.common.ExceptionUtils;
 import af.gov.anar.lib.logger.Logger;
 import af.gov.anar.spm.infrastructure.util.LoggerFactory;
 import af.gov.anar.spm.infrastructure.constant.ApplicationGenericConstants;

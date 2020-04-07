@@ -1,14 +1,12 @@
 
 package af.gov.anar.spm.spm.service;
 
-import af.gov.anar.lang.infrastructure.exception.common.PlatformDataIntegrityException;
-import af.gov.anar.lib.date.DateUtility;
+import af.gov.anar.core.infrastructure.exception.common.PlatformDataIntegrityException;
 import af.gov.anar.spm.spm.domain.Survey;
 import af.gov.anar.spm.spm.domain.SurveyValidator;
 import af.gov.anar.spm.spm.exception.SurveyNotFoundException;
 import af.gov.anar.spm.spm.repository.SurveyRepository;
 import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.orm.jpa.JpaSystemException;

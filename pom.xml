@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>af.gov.anar</groupId>
-	<artifactId>anar-spm</artifactId>
+	<artifactId>anar-spm-survey</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>anar-spm</name>
+	<name>anar-spm-survey</name>
 	<description>SPM Module of Anar Framework</description>
 
 	<properties>

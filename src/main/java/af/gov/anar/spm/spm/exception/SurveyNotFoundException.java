@@ -2,7 +2,7 @@
 package af.gov.anar.spm.spm.exception;
 
 
-import af.gov.anar.lang.infrastructure.exception.common.AbstractPlatformResourceNotFoundException;
+import af.gov.anar.core.infrastructure.exception.common.AbstractPlatformResourceNotFoundException;
 
 public class SurveyNotFoundException extends AbstractPlatformResourceNotFoundException {
 

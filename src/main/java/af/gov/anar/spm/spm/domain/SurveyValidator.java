@@ -4,9 +4,9 @@ package af.gov.anar.spm.spm.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import af.gov.anar.lang.data.ApiParameterError;
-import af.gov.anar.lang.infrastructure.exception.common.PlatformApiDataValidationException;
-import af.gov.anar.lang.validation.DataValidatorBuilder;
+import af.gov.anar.core.data.ApiParameterError;
+import af.gov.anar.core.infrastructure.exception.common.PlatformApiDataValidationException;
+import af.gov.anar.core.validation.DataValidatorBuilder;
 import af.gov.anar.spm.spm.util.SurveyApiConstants;
 import org.springframework.stereotype.Component;
 
